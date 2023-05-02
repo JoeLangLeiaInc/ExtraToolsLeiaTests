@@ -4,12 +4,17 @@ using Debug = UnityEngine.Debug;
 
 namespace ExtraTools.Test.Scripts
 {
+    [ExecuteInEditMode]
     public class TestPropertyBlocks : MonoBehaviour
     {
         [SerializeField] private Renderer[] renderers;
 
         private static readonly int colorHash = Shader.PropertyToID("_Color");
         private const string colorName = "_Color";
+        private void Start()
+        {
+            ChangeColor();
+        }
 
         private void Update()
         {
